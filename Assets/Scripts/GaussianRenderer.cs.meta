@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 515adfef4261f0bea878da4118cd1c8f
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - ellipsoidMesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+  - ellipsoidMaterial: {fileID: -3033667219593020291, guid: a883375bfee33ec1fb5aca9f44fa3397, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
