@@ -7,12 +7,15 @@ public class Gaussian
     public Quaternion Rotation { get; }
     public float Opacity { get; }
 
-    public Gaussian(Vector3 position, Vector3 scale, Quaternion rotation, float opacity)
+    public Vector3 Features { get; }
+
+    public Gaussian(Vector3 position, Vector3 scale, Quaternion rotation, float opacity, Vector3 colorFeatures)
     {
         Position = position;
         Scale = scale;
         Rotation = rotation;
         Opacity = opacity;
+        Features = colorFeatures;
     }
 
     public GameObject ToEllipsoid()
@@ -21,22 +24,25 @@ public class Gaussian
         // Set the ellipsoid's position
         ellipsoid.transform.position = this.Position;
 
-        Debug.Log(this.Scale);
         // Set the ellipsoid's scale
         ellipsoid.transform.localScale = this.Scale;
-        
-        
+
         // Set the ellipsoid's rotation
         ellipsoid.transform.rotation = this.Rotation;
 
-        // Set opacity (change material color or transparency based on opacity value)
-        Renderer renderer = ellipsoid.GetComponent<Renderer>();
-        if (renderer != null)
-        {
-            Color currentColor = renderer.material.color;
-            renderer.material.color = new Color(currentColor.r, currentColor.g, currentColor.b, this.Opacity);
-        }
 
         return ellipsoid;
+    }
+
+    public Color SH2RGB()
+    {
+        float C0 = 0.28209479177387814f;
+
+        float red = Mathf.Max(0.0f, 0.5f + C0 * this.Features.x);
+        float green = Mathf.Max(0.0f, 0.5f + C0 * this.Features.y);
+        float blue = Mathf.Max(0.0f, 0.5f + C0 * this.Features.z);
+
+        Color color = new Color(red, green, blue);
+        return color;
     }
 }
