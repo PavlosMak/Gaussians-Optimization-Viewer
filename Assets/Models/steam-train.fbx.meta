@@ -9,6 +9,46 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Black metal
     second: {fileID: 2100000, guid: df7ed996c514024d68979372588bfc52, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Black metal.001
+    second: {fileID: 2100000, guid: 7ad940d8eb722fd71a1b50d90dc66c7d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Glass
+    second: {fileID: 2100000, guid: 674a36d2dcb404b2c91db079b7a788e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gold
+    second: {fileID: 2100000, guid: 5a497f42e3f4f97cdacc0390ebb2b7a7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: 6fed79f1593dcb7dd8598f4e100b96d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: 199e79a456d886c0b8956b5407d8e497, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.004
+    second: {fileID: 2100000, guid: df2263b3278792efeba2ea12edb5b295, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Silver
+    second: {fileID: 2100000, guid: ff4fe663e9d2d8f91bb5c70968a7ce6a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: White
+    second: {fileID: 2100000, guid: 8f25a0594676512e7bd929743738bd3f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

@@ -24,8 +24,13 @@ public class GaussianRenderer : MonoBehaviour
 
     [SerializeField] private bool hideSky = false;
 
+    [SerializeField] private GameObject train;
     [SerializeField] private Material trainMaterial;
-    
+    [SerializeField] private List<Material> _materials;
+
+    [SerializeField] private Collider _collider;
+    private bool isTransparent = false;
+
     private List<Gaussian> ReadFrame(string filePath)
     {
         List<Gaussian> gaussians = new List<Gaussian>();
@@ -40,7 +45,6 @@ public class GaussianRenderer : MonoBehaviour
                     while (!sr.EndOfStream)
                     {
                         string line = sr.ReadLine(); // Read a line from the file
-
                         if (!string.IsNullOrEmpty(line))
                         {
                             string[] fields = line.Split(','); // Split the line into fields using comma as delimiter
@@ -127,6 +131,7 @@ public class GaussianRenderer : MonoBehaviour
             {
                 continue;
             }
+
             Matrix4x4 matrix = Matrix4x4.TRS(position, gaussian.Rotation,
                 gaussianScale * gaussian.Scale);
             Color color = gaussian.SH2RGB();
@@ -138,12 +143,63 @@ public class GaussianRenderer : MonoBehaviour
     bool IsFloater(Gaussian gaussian, Vector3 position)
     {
         Color color = gaussian.SH2RGB();
-        return position.y > 0.1 && color.maxColorComponent == color.b;
+        return (position.y > 0.1 && color.maxColorComponent == color.b && !_collider.bounds.Contains(position)) || position.y > 2.9;
     }
 
     void MakeTrainTransparent()
     {
-        Debug.Log("Making transparent!");
-        trainMaterial.SetFloat("_Mode", 2);
+        //CONT From this doesn't work
+        isTransparent = !isTransparent;
+        int mode = isTransparent ? 3 : 0;
+
+        Debug.Log("Making Transparent");
+        // MeshRenderer renderer = train.GetComponent<MeshRenderer>();
+        // for (int i = 0; i < renderer.materials.Length; i++)
+        // {
+        //     if (isTransparent)
+        //     {
+        //         MakeTransparent(renderer.materials[i]);
+        //     }
+        //     else
+        //     {
+        //         MakeOpaque(renderer.materials[i]);
+        //     }
+        // }
+        foreach (var material in _materials)
+        {
+            if (isTransparent)
+            {
+                MakeTransparent(material);
+            }
+            else
+            {
+                MakeOpaque(material);
+            }
+        }
+    }
+
+    void MakeTransparent(Material material)
+    {
+        material.SetFloat("_Mode", 3);
+        material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
+        material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
+        material.SetInt("_ZWrite", 0);
+        material.DisableKeyword("_ALPHATEST_ON");
+        material.EnableKeyword("_ALPHABLEND_ON");
+        material.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+        material.renderQueue = 3000;
+    }
+
+    void MakeOpaque(Material material)
+    {
+        material.SetOverrideTag("RenderType", "");
+        material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
+        material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.Zero);
+        material.SetInt("_ZWrite", 1);
+        material.DisableKeyword("_ALPHATEST_ON");
+        material.DisableKeyword("_ALPHABLEND_ON");
+        material.DisableKeyword("_ALPHAPREMULTIPLY_ON");
+        material.renderQueue = -1;
+        material.SetFloat("_Mode", 0.0f);
     }
 }
