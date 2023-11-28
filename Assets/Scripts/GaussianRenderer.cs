@@ -90,7 +90,7 @@ public class GaussianRenderer : MonoBehaviour
         Debug.Log("Loading Animation...");
         string basePath = "/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/train_smaller_frames/";
         _animation = new GaussianAnimation();
-        for (int i = 10; i <= 1000; i += 10)
+        for (int i = 0; i <= 1000; i += 10)
         {
             string path = basePath + i + ".csv";
             _animation.AddFrame(ReadFrame(path));
