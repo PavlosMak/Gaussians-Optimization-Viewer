@@ -6,55 +6,82 @@ using System.IO;
 public class CameraManager : MonoBehaviour
 {
     [SerializeField] private string PathToCameras =
-        "/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/train_smaller_frames/cameras.json";
+        "/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/train_smaller_frames/cameras.csv";
 
     [SerializeField] private GameObject cubePrefab;
     private List<Camera> _cameras;
 
+    private List<Camera> ReadCameras(string filePath)
+    {
+        List<Camera> cameras = new List<Camera>();
+        if (!string.IsNullOrEmpty(filePath))
+        {
+            // Check if the file exists at the specified path
+            if (File.Exists(filePath))
+            {
+                using (StreamReader sr = new StreamReader(filePath))
+                {
+                    sr.ReadLine(); // Skip first row since it's just the column names
+                    while (!sr.EndOfStream)
+                    {
+                        string line = sr.ReadLine(); // Read a line from the file
+                        if (!string.IsNullOrEmpty(line))
+                        {
+                            string[] fields = line.Split(','); // Split the line into fields using comma as delimiter
+                            Debug.Log("Camera Line: ");
+                            int id = int.Parse(fields[1]);
+                            float fx = float.Parse(fields[2]);
+                            float fy = float.Parse(fields[3]);
+                            int height = int.Parse(fields[4]);
+                            int width = int.Parse(fields[5]);
+                            string img_name = fields[6];
+                            Vector3 position = new Vector3(
+                                float.Parse(fields[7]), float.Parse(fields[8]), float.Parse(fields[9])
+                            );
+                            Quaternion rotation = new Quaternion();
+                            Camera camera = new Camera(id, img_name, width, height, position, rotation, fy, fx);
+                            cameras.Add(camera);
+                        }
+                    }
+                }
+
+                Debug.Log("Cameras read!");
+                Debug.Log(cameras.Count);
+            }
+            else
+            {
+                Debug.LogError("File does not exist at the specified path: " + filePath);
+            }
+        }
+        else
+        {
+            Debug.LogError("File path is not specified!");
+        }
+
+        return cameras;
+    }
+
+
     // Start is called before the first frame update
     void Start()
     {
-        string jsonString = File.ReadAllText(PathToCameras);
-        _cameras = JsonUtility.FromJson<CameraList>(jsonString).cameraList;
-        Debug.Log(_cameras.Count);
+        _cameras = ReadCameras(PathToCameras);
+        // string jsonString = File.ReadAllText(PathToCameras);
+        // _cameras = JsonUtility.FromJson<CameraList>(jsonString).cameraList;
+        // Debug.Log(_cameras.Count);
         foreach (var camera in _cameras)
         {
-            Debug.Log("Making Camera...");
-            InstantiateCube(camera.rotation, camera.position);
+            Debug.Log("Making Camera " + camera.id);
+            Debug.Log("Camera height" + camera.height);
+            Debug.Log("Camera width" + camera.width);
+            Debug.Log("Camera img name" + camera.img_name);
+            GameObject cube = (GameObject)Instantiate(cubePrefab,
+                camera.position, camera.rotation);
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-    }
-
-    void InstantiateCube(float[][] orientationMatrix, float[] positionVector)
-    {
-        if (orientationMatrix.Length != 3 || positionVector.Length != 3)
-        {
-            Debug.LogError("Invalid matrix or vector size");
-            return;
-        }
-
-        // Create a rotation matrix from the given 2D array
-        Vector3[] columns = new Vector3[3];
-        for (int i = 0; i < 3; i++)
-        {
-            if (orientationMatrix[i].Length != 3)
-            {
-                Debug.LogError("Invalid matrix size");
-                return;
-            }
-
-            columns[i] = new Vector3(orientationMatrix[0][i], orientationMatrix[1][i], orientationMatrix[2][i]);
-        }
-
-        Matrix4x4 rotationMatrix = new Matrix4x4(columns[0], columns[1], columns[2], new Vector4(0, 0, 0, 1));
-
-        // Instantiate cube at the given position with the calculated rotation
-        GameObject cube = (GameObject)Instantiate(cubePrefab,
-            new Vector3(positionVector[0], positionVector[1], positionVector[2]), Quaternion.identity);
-        cube.transform.rotation = Quaternion.LookRotation(rotationMatrix.GetColumn(2), rotationMatrix.GetColumn(1));
     }
 }

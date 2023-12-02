@@ -11,12 +11,12 @@ public class Camera
     public string img_name;
     public int width;
     public int height;
-    public float[] position;
-    public float[][] rotation;
+    public Vector3 position;
+    public Quaternion rotation;
     public double fy;
     public double fx;
 
-    public Camera(int id, string imgName, int width, int height, float[] position, float[][] rotation, double fy,
+    public Camera(int id, string imgName, int width, int height, Vector3 position, Quaternion rotation, double fy,
         double fx)
     {
         this.id = id;
@@ -28,10 +28,4 @@ public class Camera
         this.fy = fy;
         this.fx = fx;
     }
-}
-
-[System.Serializable]
-public class CameraList
-{
-    public List<Camera> cameraList;
 }
