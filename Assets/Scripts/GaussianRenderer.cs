@@ -3,6 +3,8 @@ using UnityEngine;
 using System.Collections.Generic;
 using System.IO;
 using DefaultNamespace;
+using UnityEngine.UIElements;
+using TMPro;
 
 public class GaussianRenderer : MonoBehaviour
 {
@@ -18,6 +20,9 @@ public class GaussianRenderer : MonoBehaviour
     [SerializeField] private Mesh ellipsoidMesh; // Reference to the ellipsoid mesh
     [SerializeField] private Material ellipsoidMaterial; // Reference to the material to be used for the ellipsoids
 
+    [SerializeField] private TMP_Text _frameCountText;
+    [SerializeField] private TMP_Text _gaussiansCountText;
+
     [SerializeField] private Vector3 gaussianPosition = new Vector3(0.0f, 0.0f, 0.0f);
     [SerializeField] private Vector3 gaussianRotation = new Vector3(0.0f, 0.0f, 0.0f);
     [SerializeField] private float gaussianScale = 1.0f;
@@ -31,6 +36,11 @@ public class GaussianRenderer : MonoBehaviour
     [SerializeField] private Collider _collider;
     private bool isTransparent = false;
 
+    private bool showKernels = false;
+    private bool animationPlaying = false;
+
+    [SerializeField] private GameObject floor;
+    
     private List<Gaussian> ReadFrame(string filePath)
     {
         List<Gaussian> gaussians = new List<Gaussian>();
@@ -102,16 +112,38 @@ public class GaussianRenderer : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.N))
+        //first update the UI
+        _frameCountText.text = "Frame: " + frame + "/100";
+        _gaussiansCountText.text = "Gaussians: " + _animation.Frames[frame].Count;
+        //control logic
+        if (Input.GetKeyDown(KeyCode.H))
+        {
+            showKernels = !showKernels;
+        }
+
+        if (!showKernels)
+        {
+            return;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            animationPlaying = !animationPlaying;
+        }
+
+        if (Input.GetKeyDown(KeyCode.N) || animationPlaying)
         {
             frame = (frame + 1) % _animation.Frames.Count;
-            Debug.Log(frame);
+        }
+
+        if (Input.GetKeyDown(KeyCode.F))
+        {
+            hideSky = !hideSky;
         }
 
         if (Input.GetKeyDown(KeyCode.B))
         {
             frame = Math.Max(0, (frame - 1)) % _animation.Frames.Count;
-            Debug.Log(frame);
         }
 
         if (Input.GetKeyDown(KeyCode.T))
@@ -119,9 +151,13 @@ public class GaussianRenderer : MonoBehaviour
             MakeTrainTransparent();
         }
 
-        RenderParams rp = new RenderParams(ellipsoidMaterial) { matProps = block };
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            floor.SetActive(!floor.activeSelf);
+        }
 
-        Quaternion rotation = Quaternion.Euler(gaussianRotation);
+        //rendering
+        RenderParams rp = new RenderParams(ellipsoidMaterial) { matProps = block };
 
         foreach (var gaussian in _animation.Frames[frame])
         {
@@ -135,7 +171,7 @@ public class GaussianRenderer : MonoBehaviour
             Matrix4x4 matrix = Matrix4x4.TRS(position, gaussian.Rotation,
                 gaussianScale * gaussian.Scale);
             Color color = gaussian.SH2RGB();
-            block.SetColor("_Color", gaussian.SH2RGB());
+            block.SetColor("_Color", color);
             Graphics.RenderMesh(rp, ellipsoidMesh, 0, matrix);
         }
     }
@@ -143,28 +179,14 @@ public class GaussianRenderer : MonoBehaviour
     bool IsFloater(Gaussian gaussian, Vector3 position)
     {
         Color color = gaussian.SH2RGB();
-        return (position.y > 0.1 && color.maxColorComponent == color.b && !_collider.bounds.Contains(position)) || position.y > 2.9;
+        return (position.y > 0.1 && color.maxColorComponent == color.b && !_collider.bounds.Contains(position)) ||
+               position.y > 2.9;
     }
 
     void MakeTrainTransparent()
     {
-        //CONT From this doesn't work
         isTransparent = !isTransparent;
-        int mode = isTransparent ? 3 : 0;
-
         Debug.Log("Making Transparent");
-        // MeshRenderer renderer = train.GetComponent<MeshRenderer>();
-        // for (int i = 0; i < renderer.materials.Length; i++)
-        // {
-        //     if (isTransparent)
-        //     {
-        //         MakeTransparent(renderer.materials[i]);
-        //     }
-        //     else
-        //     {
-        //         MakeOpaque(renderer.materials[i]);
-        //     }
-        // }
         foreach (var material in _materials)
         {
             if (isTransparent)

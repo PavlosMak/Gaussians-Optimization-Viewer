@@ -46,58 +46,80 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets/Scripts/GaussianRenderer.cs" />
-     <Compile Include="Assets/Ciconia Studio/_Shared Files/Scripts/Demo/UIButton_ShowNext.cs" />
      <Compile Include="Assets/Scripts/ScreenShooter.cs" />
-     <Compile Include="Assets/Ciconia Studio/_Shared Files/Scripts/Demo/FreeCam.cs" />
      <Compile Include="Assets/Scripts/CamController3D.cs" />
      <Compile Include="Assets/Scripts/Camera.cs" />
      <Compile Include="Assets/Scripts/CameraManager.cs" />
-     <Compile Include="Assets/Ciconia Studio/_Shared Files/Scripts/Demo/SuperCamera.cs" />
      <Compile Include="Assets/Scripts/FreeFlyCamera.cs" />
      <Compile Include="Assets/Scripts/GaussianAnimation.cs" />
-     <Compile Include="Assets/Ciconia Studio/_Shared Files/Scripts/Demo/FreeCamera.cs" />
      <Compile Include="Assets/Scripts/Gaussian.cs" />
      <Folder Include="Assets" />
      <Folder Include="Assets/Ciconia Studio/Shaders/_Shared Files/Textures/RockyDirt" />
      <Folder Include="Assets/Scenes" />
-     <Folder Include="Assets/Ciconia Studio/_Shared Files/Demo Environment/Textures/Miscellaneous" />
+     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
+     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />
+     <Folder Include="Assets/TextMesh Pro/Sprites" />
      <Folder Include="Assets/Ciconia Studio/Shaders/_Shared Files/Textures/Grayscale Map" />
+     <Folder Include="Assets/TextMesh Pro/Resources/Sprite Assets" />
      <Folder Include="Assets/Ciconia Studio/Shaders/Standard Shaders/BuiltIn/Demo Scene/Sources/Animation" />
      <Folder Include="Assets/Ciconia Studio/Shaders/Standard Shaders/BuiltIn/Demo Scene" />
      <Folder Include="Assets/Ciconia Studio/Shaders/Standard Shaders/BuiltIn/Demo Scene/Sources/Standard Demo_Build-in_Profiles" />
+     <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" />
      <Folder Include="Assets/Materials/train materials" />
-     <Folder Include="Assets/Ciconia Studio/_Shared Files/Demo Environment/Textures" />
+     <Folder Include="Assets/Resources" />
      <Folder Include="Assets/Ciconia Studio/Shaders/Standard Shaders/BuiltIn/Demo Scene/Sources/Models/Panel" />
      <None Include="Assets/Ciconia Studio/Shaders/Standard Shaders/BuiltIn/CS_Standard (Specular setup) Opaque.shader" />
      <Folder Include="Assets/Ciconia Studio/Shaders/Standard Shaders" />
+     <Folder Include="Assets/TextMesh Pro/Resources/Fonts &amp; Materials" />
+     <None Include="Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc" />
+     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader" />
+     <Folder Include="Assets/TextMesh Pro/Resources" />
      <Folder Include="Assets/Materials" />
-     <Folder Include="Assets/Ciconia Studio/_Shared Files/Demo Environment" />
      <Folder Include="Assets/Ciconia Studio/Shaders" />
      <Folder Include="Assets/Ciconia Studio/Shaders/_Shared Files" />
+     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader" />
+     <Folder Include="Assets/TextMesh Pro" />
      <Folder Include="Assets/Models" />
      <Folder Include="Assets/Ciconia Studio/_Shared Files/UI" />
      <Folder Include="Assets/Ciconia Studio/_Shared Files" />
      <Folder Include="Assets/Ciconia Studio/Shaders/Standard Shaders/BuiltIn/Demo Scene/Sources/Models/Fence" />
      <Folder Include="Assets/Ciconia Studio" />
      <Folder Include="Assets/Ciconia Studio/_Shared Files/Materials/HDRI" />
+     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader" />
      <Folder Include="Assets/Ciconia Studio/Shaders/Standard Shaders/BuiltIn" />
-     <Folder Include="Assets/Ciconia Studio/_Shared Files/Demo Environment/Materials" />
+     <None Include="Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt" />
+     <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader" />
+     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF.shader" />
+     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader" />
+     <None Include="Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt" />
      <None Include="Assets/Ciconia Studio/Shaders/Standard Shaders/BuiltIn/CS_Standard (Specular setup) Transparent.shader" />
+     <None Include="Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc" />
+     <None Include="Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" />
+     <Folder Include="Assets/TextMesh Pro/Shaders" />
      <Folder Include="Assets/Ciconia Studio/Shaders/_Shared Files/Textures" />
-     <Folder Include="Assets/Ciconia Studio/_Shared Files/Scripts/Demo" />
+     <None Include="Assets/Resources/BillingMode.json" />
+     <Folder Include="Assets/TextMesh Pro/Resources/Style Sheets" />
+     <Folder Include="Assets/TextMesh Pro/Fonts" />
      <Folder Include="Assets/Ciconia Studio/Shaders/Standard Shaders/BuiltIn/Demo Scene/Sources/Models/Wall &amp; Window" />
+     <None Include="Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt" />
      <None Include="Assets/Ciconia Studio/Shaders/Standard Shaders/BuiltIn/CS_Lite Standard (Specular setup) Transparent.shader" />
      <None Include="Assets/Ciconia Studio/Shaders/Standard Shaders/Readme.txt" />
      <Folder Include="Assets/Ciconia Studio/Shaders/Standard Shaders/BuiltIn/Demo Scene/Sources/Models/_Prefabs" />
-     <Folder Include="Assets/Ciconia Studio/_Shared Files/Scripts" />
+     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader" />
      <Folder Include="Assets/Scripts" />
-     <Folder Include="Assets/Ciconia Studio/_Shared Files/Demo Environment/Textures/Asphalt" />
+     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader" />
      <None Include="Assets/Ciconia Studio/Shaders/Standard Shaders/BuiltIn/CS_Lite Standard (Specular setup) Opaque.shader" />
      <None Include="Assets/Ciconia Studio/Shaders/Standard Shaders/BuiltIn/CS_Lite Standard (Specular setup) Cutout.shader" />
+     <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader" />
+     <None Include="Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt" />
+     <Folder Include="Assets/TextMesh Pro/Documentation" />
+     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader" />
      <None Include="Assets/Ciconia Studio/Shaders/Standard Shaders/BuiltIn/CS_Standard (Specular setup) Cutout.shader" />
      <Folder Include="Assets/Ciconia Studio/Shaders/Standard Shaders/BuiltIn/Demo Scene/Sources/Models" />
      <Folder Include="Assets/Ciconia Studio/Shaders/Standard Shaders/BuiltIn/Demo Scene/Sources" />
      <Folder Include="Assets/Ciconia Studio/_Shared Files/Materials" />
+     <None Include="Assets/TextMesh Pro/Sprites/EmojiOne.json" />
+     <None Include="Assets/TextMesh Pro/Shaders/TMP_Sprite.shader" />
      <Reference Include="UnityEngine">
      <HintPath>/home/pavlos/Unity/Hub/Editor/2022.3.13f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
      </Reference>
@@ -344,11 +366,23 @@
      <Reference Include="UnityEditor.UnityConnectModule">
      <HintPath>/home/pavlos/Unity/Hub/Editor/2022.3.13f1/Editor/Data/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.Analytics.Tracker">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/PackageCache/com.unity.analytics@3.8.1/Unity.Analytics.Tracker.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Analytics.Editor">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/PackageCache/com.unity.analytics@3.8.1/Unity.Analytics.Editor.dll</HintPath>
+     </Reference>
      <Reference Include="ReportGeneratorMerged">
      <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/PackageCache/com.unity.testtools.codecoverage@1.2.4/lib/ReportGenerator/ReportGeneratorMerged.dll</HintPath>
      </Reference>
      <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
      <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/PackageCache/com.unity.visualscripting@1.9.1/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+     </Reference>
+     <Reference Include="Newtonsoft.Json">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.2.1/Runtime/Newtonsoft.Json.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Analytics.StandardEvents">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/PackageCache/com.unity.analytics@3.8.1/AnalyticsStandardEvents/Unity.Analytics.StandardEvents.dll</HintPath>
      </Reference>
      <Reference Include="netstandard">
      <HintPath>/home/pavlos/Unity/Hub/Editor/2022.3.13f1/Editor/Data/NetStandard/ref/2.1.0/netstandard.dll</HintPath>
@@ -716,23 +750,41 @@
      <Reference Include="mscorlib">
      <HintPath>/home/pavlos/Unity/Hub/Editor/2022.3.13f1/Editor/Data/NetStandard/compat/2.1.0/shims/netfx/mscorlib.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.Timeline">
-     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
-     </Reference>
      <Reference Include="Unity.Recorder.Editor">
      <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.Recorder.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Services.Analytics.Editor">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.Services.Analytics.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.Purchasing.Stores">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/UnityEngine.Purchasing.Stores.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.AI.Navigation">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.AI.Navigation.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Analytics.DataPrivacy">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Services.Core">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.Services.Core.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Rider.Editor">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.2D.Sprite.Editor">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.VisualScripting.Flow">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.VisualScripting.Flow.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection">
      <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Mono.Reflection.dll</HintPath>
      </Reference>
-     <Reference Include="UnityEngine.UI">
-     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+     <Reference Include="Unity.Services.Core.Environments">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.Services.Core.Environments.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.EditorCoroutines.Editor">
-     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.EditorCoroutines.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
-     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
+     <Reference Include="UnityEngine.Purchasing.SecurityCore">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/UnityEngine.Purchasing.SecurityCore.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Performance.Profile-Analyzer.Editor">
      <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.Performance.Profile-Analyzer.Editor.dll</HintPath>
@@ -740,14 +792,44 @@
      <Reference Include="Unity.TestTools.CodeCoverage.Editor">
      <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
-     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
+     <Reference Include="UnityEngine.Purchasing.Codeless">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/UnityEngine.Purchasing.Codeless.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.TextMeshPro">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.Purchasing">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/UnityEditor.Purchasing.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Services.Core.Analytics">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.Services.Core.Analytics.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Recorder">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.Recorder.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.AI.Navigation.Editor.ConversionSystem">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.AI.Navigation.Editor.ConversionSystem.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.VSCode.Editor">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.Purchasing">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/UnityEngine.Purchasing.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.EditorCoroutines.Editor">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.EditorCoroutines.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.XR.LegacyInputHelpers">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
      </Reference>
      <Reference Include="Unity.PlasticSCM.Editor">
      <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.PlasticSCM.Editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.VisualScripting.State.Editor">
-     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.VisualScripting.State.Editor.dll</HintPath>
+     <Reference Include="UnityEngine.Purchasing.SecurityStub">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/UnityEngine.Purchasing.SecurityStub.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.Advertisements">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/UnityEngine.Advertisements.dll</HintPath>
      </Reference>
      <Reference Include="Unity.Timeline.Editor">
      <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
@@ -755,44 +837,74 @@
      <Reference Include="Unity.VisualScripting.Shared.Editor">
      <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.VisualScripting.Shared.Editor.dll</HintPath>
      </Reference>
+     <Reference Include="UnityEditor.SpatialTracking">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/UnityEditor.SpatialTracking.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.VisualStudio.Editor">
      <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Recorder.Base">
-     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.Recorder.Base.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.TextMeshPro">
-     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.VisualScripting.Core">
-     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.VisualScripting.Core.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.Recorder">
-     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.Recorder.dll</HintPath>
      </Reference>
      <Reference Include="UnityEditor.UI">
      <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.VisualScripting.Core">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.VisualScripting.Core.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.Advertisements.Editor">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/UnityEngine.Advertisements.Editor.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.VisualScripting.Core.Editor">
      <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.VisualScripting.Core.Editor.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.Rider.Editor">
-     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+     <Reference Include="Analytics">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Analytics.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Recorder.Base">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.Recorder.Base.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.SpatialTracking">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/UnityEngine.SpatialTracking.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEngine.UI">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+     </Reference>
+     <Reference Include="UnityEditor.XR.LegacyInputHelpers">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
+     </Reference>
+     <Reference Include="Purchasing.Common">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Purchasing.Common.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.VisualScripting.Flow.Editor">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.VisualScripting.Flow.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Timeline">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.VisualScripting.SettingsProvider.Editor">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.VisualScripting.SettingsProvider.Editor.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.Services.Analytics">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.Services.Analytics.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.TestTools.CodeCoverage.Editor.OpenCover.Model">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.TestTools.CodeCoverage.Editor.OpenCover.Model.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.AI.Navigation.Updater">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.AI.Navigation.Updater.dll</HintPath>
+     </Reference>
+     <Reference Include="Unity.VisualScripting.State.Editor">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.VisualScripting.State.Editor.dll</HintPath>
      </Reference>
      <Reference Include="Unity.TextMeshPro.Editor">
      <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
      </Reference>
+     <Reference Include="Unity.AI.Navigation.Editor">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.AI.Navigation.Editor.dll</HintPath>
+     </Reference>
      <Reference Include="Unity.VisualScripting.State">
      <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.VisualScripting.State.dll</HintPath>
      </Reference>
-     <Reference Include="Unity.VSCode.Editor">
-     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.VisualScripting.Flow">
-     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.VisualScripting.Flow.dll</HintPath>
-     </Reference>
-     <Reference Include="Unity.VisualScripting.Flow.Editor">
-     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.VisualScripting.Flow.Editor.dll</HintPath>
+     <Reference Include="Unity.2D.Tilemap.Editor">
+     <HintPath>/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/gaussians_visualized/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
      </Reference>
   </ItemGroup>
   <ItemGroup>
