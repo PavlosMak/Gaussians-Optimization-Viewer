@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Gaussian
@@ -9,13 +10,17 @@ public class Gaussian
 
     public Vector3 Features { get; }
 
-    public Gaussian(Vector3 position, Vector3 scale, Quaternion rotation, float opacity, Vector3 colorFeatures)
+    private bool featuresAreRGB = false;
+
+    public Gaussian(Vector3 position, Vector3 scale, Quaternion rotation, float opacity, Vector3 colorFeatures,
+        bool featuresAreRGB = false)
     {
         Position = position;
         Scale = scale;
         Rotation = rotation;
         Opacity = opacity;
         Features = colorFeatures;
+        this.featuresAreRGB = featuresAreRGB;
     }
 
     public GameObject ToEllipsoid()
@@ -36,6 +41,11 @@ public class Gaussian
 
     public Color SH2RGB()
     {
+        if (this.featuresAreRGB)
+        {
+            return new Color(this.Features.x / 255.0f, this.Features.y / 255.0f, this.Features.z / 255.0f);
+        }
+
         float C0 = 0.28209479177387814f;
 
         float red = Mathf.Max(0.0f, 0.5f + C0 * this.Features.x);

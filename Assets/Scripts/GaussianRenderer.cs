@@ -5,17 +5,18 @@ using System.IO;
 using DefaultNamespace;
 using UnityEngine.UIElements;
 using TMPro;
+using Unity.VisualScripting;
 
 public class GaussianRenderer : MonoBehaviour
 {
-    public string
-        filePath =
-            "/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/train_smaller_frames/1000.csv"; // Set the file path in the Inspector or provide it programmatically
-
     private GaussianAnimation _animation;
     private int frame = 0;
 
     private MaterialPropertyBlock block;
+
+    //NOTE: You will have to change this if you are running it locally
+    private string basePath = "/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/train_smaller_frames/";
+
 
     [SerializeField] private Mesh ellipsoidMesh; // Reference to the ellipsoid mesh
     [SerializeField] private Material ellipsoidMaterial; // Reference to the material to be used for the ellipsoids
@@ -24,24 +25,21 @@ public class GaussianRenderer : MonoBehaviour
     [SerializeField] private TMP_Text _gaussiansCountText;
 
     [SerializeField] private Vector3 gaussianPosition = new Vector3(0.0f, 0.0f, 0.0f);
-    [SerializeField] private Vector3 gaussianRotation = new Vector3(0.0f, 0.0f, 0.0f);
     [SerializeField] private float gaussianScale = 1.0f;
 
     [SerializeField] private bool hideSky = false;
 
-    [SerializeField] private GameObject train;
-    [SerializeField] private Material trainMaterial;
-    [SerializeField] private List<Material> _materials;
-
     [SerializeField] private Collider _collider;
-    private bool isTransparent = false;
 
     private bool showKernels = false;
     private bool animationPlaying = false;
 
     [SerializeField] private GameObject floor;
-    
-    private List<Gaussian> ReadFrame(string filePath)
+    [SerializeField] private GameObject mainTrain;
+    [SerializeField] private GameObject transparentTrain;
+
+
+    private List<Gaussian> ReadFrame(string filePath, bool featuresAreRgb = false)
     {
         List<Gaussian> gaussians = new List<Gaussian>();
         if (!string.IsNullOrEmpty(filePath))
@@ -73,14 +71,12 @@ public class GaussianRenderer : MonoBehaviour
                             Vector3 colorFeatures = new Vector3(float.Parse(fields[13]), float.Parse(fields[14]),
                                 float.Parse(fields[15]));
 
-                            Gaussian gaussian = new Gaussian(position, scale, rotation, opacity, colorFeatures);
+                            Gaussian gaussian = new Gaussian(position, scale, rotation, opacity, colorFeatures,
+                                featuresAreRgb);
                             gaussians.Add(gaussian);
                         }
                     }
                 }
-
-                Debug.Log("Gaussians read!");
-                Debug.Log(gaussians.Count);
             }
             else
             {
@@ -97,17 +93,15 @@ public class GaussianRenderer : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("Loading Animation...");
-        string basePath = "/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/train_smaller_frames/";
         _animation = new GaussianAnimation();
-        for (int i = 0; i <= 1000; i += 10)
+        _animation.AddFrame(ReadFrame(basePath + 0 + ".csv", true));
+        for (int i = 10; i <= 1000; i += 10)
         {
             string path = basePath + i + ".csv";
             _animation.AddFrame(ReadFrame(path));
         }
 
         block = new MaterialPropertyBlock();
-        Debug.Log("Loaded Animation - " + _animation.Frames.Count + " frames!");
     }
 
     void Update()
@@ -116,6 +110,11 @@ public class GaussianRenderer : MonoBehaviour
         _frameCountText.text = "Frame: " + frame + "/100";
         _gaussiansCountText.text = "Gaussians: " + _animation.Frames[frame].Count;
         //control logic
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            MakeTrainTransparent();
+        }
+
         if (Input.GetKeyDown(KeyCode.H))
         {
             showKernels = !showKernels;
@@ -143,12 +142,12 @@ public class GaussianRenderer : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.B))
         {
-            frame = Math.Max(0, (frame - 1)) % _animation.Frames.Count;
-        }
-
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            MakeTrainTransparent();
+            frame = frame - 1;
+            if (frame < 0)
+            {
+                frame = _animation.Frames.Count - 1;
+            }
+            // frame = Math.Max(0, (frame - 1)) % _animation.Frames.Count;
         }
 
         if (Input.GetKeyDown(KeyCode.V))
@@ -185,43 +184,7 @@ public class GaussianRenderer : MonoBehaviour
 
     void MakeTrainTransparent()
     {
-        isTransparent = !isTransparent;
-        Debug.Log("Making Transparent");
-        foreach (var material in _materials)
-        {
-            if (isTransparent)
-            {
-                MakeTransparent(material);
-            }
-            else
-            {
-                MakeOpaque(material);
-            }
-        }
-    }
-
-    void MakeTransparent(Material material)
-    {
-        material.SetFloat("_Mode", 3);
-        material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.SrcAlpha);
-        material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.OneMinusSrcAlpha);
-        material.SetInt("_ZWrite", 0);
-        material.DisableKeyword("_ALPHATEST_ON");
-        material.EnableKeyword("_ALPHABLEND_ON");
-        material.DisableKeyword("_ALPHAPREMULTIPLY_ON");
-        material.renderQueue = 3000;
-    }
-
-    void MakeOpaque(Material material)
-    {
-        material.SetOverrideTag("RenderType", "");
-        material.SetInt("_SrcBlend", (int)UnityEngine.Rendering.BlendMode.One);
-        material.SetInt("_DstBlend", (int)UnityEngine.Rendering.BlendMode.Zero);
-        material.SetInt("_ZWrite", 1);
-        material.DisableKeyword("_ALPHATEST_ON");
-        material.DisableKeyword("_ALPHABLEND_ON");
-        material.DisableKeyword("_ALPHAPREMULTIPLY_ON");
-        material.renderQueue = -1;
-        material.SetFloat("_Mode", 0.0f);
+        mainTrain.SetActive(!mainTrain.activeSelf);
+        transparentTrain.SetActive(!transparentTrain.activeSelf);
     }
 }

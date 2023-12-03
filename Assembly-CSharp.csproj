@@ -71,6 +71,7 @@
      <None Include="Assets/Ciconia Studio/Shaders/Standard Shaders/BuiltIn/CS_Standard (Specular setup) Opaque.shader" />
      <Folder Include="Assets/Ciconia Studio/Shaders/Standard Shaders" />
      <Folder Include="Assets/TextMesh Pro/Resources/Fonts &amp; Materials" />
+     <Folder Include="Assets/renders" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader" />
      <Folder Include="Assets/TextMesh Pro/Resources" />
@@ -106,6 +107,7 @@
      <None Include="Assets/Ciconia Studio/Shaders/Standard Shaders/Readme.txt" />
      <Folder Include="Assets/Ciconia Studio/Shaders/Standard Shaders/BuiltIn/Demo Scene/Sources/Models/_Prefabs" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader" />
+     <Folder Include="Assets/Materials/train materials 1" />
      <Folder Include="Assets/Scripts" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader" />
      <None Include="Assets/Ciconia Studio/Shaders/Standard Shaders/BuiltIn/CS_Lite Standard (Specular setup) Opaque.shader" />
