@@ -14,8 +14,8 @@ public class GaussianRenderer : MonoBehaviour
 
     private MaterialPropertyBlock block;
 
-    //NOTE: You will have to change this if you are running it locally
-    private string basePath = "/home/pavlos/Desktop/stuff/Uni-Masters/Q5/GraphicsSeminar/train_smaller_frames/";
+    //TODO: Change this path to point to where you downloaded the frames.
+    private string basePath = "path/to/optimization_frames/"; //don't forget the `/` in the end
 
 
     [SerializeField] private Mesh ellipsoidMesh; // Reference to the ellipsoid mesh
